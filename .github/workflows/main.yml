@@ -2,7 +2,7 @@
 
 name: CI
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
@@ -16,12 +16,12 @@ on:
   workflow_dispatch:
     inputs:
       logLevel:
-        description: 'Log level'     
+        description: 'Log level'
         required: true
         default: 'warning'
       tags:
-        description: 'Test scenario tags'  
-        
+        description: 'Test scenario tags'
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -62,5 +62,5 @@ jobs:
           platforms: linux/amd64,linux/arm64/v8,linux/arm/v7,linux/arm/v6
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
-            tangcuyu/php:latest
-            tangcuyu/php:${{ steps.date.outputs.today }}
+            lip8up/php:latest
+            lip8up/php:${{ steps.date.outputs.today }}
