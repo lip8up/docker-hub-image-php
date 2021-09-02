@@ -30,6 +30,8 @@ mysqli \
 pdo \
 pdo_mysql \
 zip
+RUN pecl install redis-5.1.1 \
+    && docker-php-ext-enable redis
 
 # Clear package lists
 RUN apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
